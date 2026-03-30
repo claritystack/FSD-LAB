@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Footer from "./components/Footer";
+import Education from "./components/Education";
 
 function App() {
+  const projects = [
+    "Portfolio Website",
+    "Notes App",
+    "E-commerce App (In-progress)"
+  ];
+
+  const education = [
+  {
+    degree: "B.Tech Computer Science",
+    institute: "MIT-WPU, Pune",
+    year: "2023 - 2027"
+  },
+  {
+    degree: "Class XII",
+    institute: "DAV Public School, Nerul",
+    year: "2022"
+  }
+];
+
+  const skills = ["C", "C++", "Kotlin", "Python", "React", "Jetpack Compose", "MVVM"];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <div>
+    <Header name="Atharva Bagal" role="Btech CSE Student" />
+    <About desc="Passionate about web development and AI." />
+    
+    <Education data={education} />   {/* 👈 ADD HERE */}
+    
+    <Projects data={projects} />
+    <Skills skills={skills} />
+    <Footer />
+  </div>
+);
 }
 
 export default App;
